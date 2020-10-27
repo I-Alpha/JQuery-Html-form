@@ -1,6 +1,0 @@
-
-
-class  Question {
-
-    Title : String()
-}

@@ -1,7 +1,0 @@
-
-
-class  Question {
-
-    string Title : " ",   
-
-}
