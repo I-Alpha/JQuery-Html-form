@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="wrapper">
+            <h1>Propose</h1>
+            <form id="form1">
+                <label class="questionLabel" for="fname">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                    ipsum excepturi maxime accusamus?</label>
+                <span class="inputContainer">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider  round"></span>                       
+                    </label>
+                     <p class ="checkBoxChoice"></p>                     
+                     <input id= "skipQuestion"  type="checkbox" unchecked>
+                </span>
+             
+            </form>
+        </div>
+        <button id="submitbtn" type="submit" form="form1" value="Submit">Submit</button>
+    </div>
+</body>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: black;
+
+    }
+
+    html {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+    }
+
+    .center {
+
+        justify-content: center;
+        justify-items: center;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        top: 40px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    #wrapper {
+        border: solid 1px black;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    #form1 {
+
+
+        position: relative;
+        display: grid;
+        grid-template-columns: 10fr 1fr;
+        grid-gap: 16px;
+        width: 80%;
+    }
+
+
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        height:auto;
+        height:100px;
+    }
+
+    .skipQuestion{
+        margin-top : 10px
+    }
+
+    /* slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 1px;
+        bottom: 2.1px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(23px);
+        -ms-transform: translateX(23px);
+        transform: translateX(23px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    /*end of slider section*/
+
+    button {
+        margin: 10px;
+        width: 70px;
+        border-radius: 4px;
+    }
+</style>
+<script>
+
+
+</script>
+
+</html>
