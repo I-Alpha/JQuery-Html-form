@@ -513,7 +513,7 @@ $(document).ready(function () {
 
         // $("#testblock").html("<br/><br/>Before : " + postData[0])
         if (address == "") {
-            confirm("Form has been completed successfully. Thanks!\n But an post url was not given: Json data available for download.")   
+            confirm("Form has been completed successfully. Thanks!\n But an post url was not given; Json data available for download.")   
             download(JSON.stringify(postData), 'json.txt', 'text/plain');
         } else {
             $.ajax({
