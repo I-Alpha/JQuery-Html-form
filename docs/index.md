@@ -5,6 +5,6 @@
 
 ## Returns or POSTs a JSONarray. 
   
-<img src= "https://github.com/I-Alpha/JQuery-Html-form/blob/main/htmlgif.gif">
+<img src= "https://github.com/I-Alpha/JQuery-Html-form/blob/main/htmlgif.gif?raw=true">
  
-<img src= "https://github.com/I-Alpha/JQuery-Html-form/blob/main/Html_Image.png">
+<img src= "https://github.com/I-Alpha/JQuery-Html-form/blob/main/Html_Image.png?raw=true">
