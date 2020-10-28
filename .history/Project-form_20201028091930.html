@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" type="fetch" id="Excelfile" name="Excelfile" value="QuestionData.xlsx" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css" />
+    </style>
+    <title>Document</title>
+  </head>
+
+
+    <body style=" display:flex; flex-direction: column; padding: 15px">
+      <!-- <div id="testblock" name="testblock" style="border:2px solid blue; width: 100%; min-height:200px">test block</div> -->
+  
+  
+      <div id="mainwrapper" style="justify-content: center;">
+  
+        <div id="preBar" class="container">
+          <div id="formControl" class="container">
+            <label for="Full Name">
+              Full Name
+              <input type="text" id="fullname" onkeydown="checkSubmit()" onkeyup="checkSubmit()" class="required" placeholder="Please type your full name here..."> </label>
+  
+            <label for="selectProject">Select Project
+              <select name="selectProject" id="selectProject" style=" margin :0 0 0 10px; max-width:8rem; " placeholder="Select Portfolio"></select></label>
+          </div>
+        </div>
+  
+        <div id="formContainer" class="container">
+          <div id="wrapper">
+            <form id="form1" onsubmit="e.">
+  
+              <table class="hidden">
+                <tr id="questionRow">
+                  <td colspan=4 class="questCol">
+                    <label class="questionLabel" for="mainCheck"></label>
+                  </td>
+                  <td colspan=1 class="inputCol">
+                    <span class="inputContainer">
+                      <span class="mainCheckContainer" style=" display:flex; flex-direction: column;">
+                        <label class="switch">
+                          <input class="mainCheck" type="checkbox" checked>
+                          <span class="slider"></span>
+                        </label>
+                        <p for="mainCheck" class="mainChoice" data-val="Yes">No</p>
+                      </span>
+                      <span class="skipContainer" style="left : 6px; display:flex; ">
+                        <input class="skipCheck" onkeydown="checkSubmit()" type="checkbox">
+                        <p class="skipChoice">Skip?</p>
+                      </span>
+  
+                    </span>
+                  </td>
+                  <td colspan=2 class="altCol">
+                    <label id="datepickerlabel" class="vis"> Target Date <input class="datepicker vis" onclick="updateDate(),checkSubmit()" type="date" min="getDate()"></label>
+                    <label id="textarealabel" class="vis"> Action Plan <textarea class="vis" type="text" onkeydown="checkSubmit()" onkeyup="checkSubmit()" placeholder="Please specify a reason for your choice...."></textarea></label>
+                  </td>
+                </tr>
+              </table>
+  
+            </form>
+          </div>
+          <div></div>
+  
+          <div id="progressBar">
+  
+            <div class="progressbuttons">
+              <a href="#Propose"> Propose </a>
+            </div>
+            <div class="progressbuttons">
+              <a href="#Discover"> Discover </a>
+            </div>
+            <div class="progressbuttons">
+              <a href="#Design &amp; Deliver"> Design &amp; Deliver </a>
+            </div>
+            <div class="progressbuttons">
+              <a href="#Embed &amp; Evolve"> Embed &amp; Evolve </a>
+            </div>
+            <div class="progressbuttons">
+              <a href="#Project Management"> Project Management </a>
+            </div>
+            <div class="progressbuttons">
+              <a href="#Project Governance"> Project Governance </a>
+            </div>
+            <div class="progressbuttons">
+              <a href="#Financial / Benefits"> Financial / Benefits </a>
+            </div>
+            <button id="submitbtn" type="submit" form="form1" value="Submit" class="disabled">Submit</button>
+          </div>
+  
+        </div>
+      </div>
+    </body>
+  
+  </html>
+  
