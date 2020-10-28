@@ -416,87 +416,31 @@ function checkState(e) {
     //caputure  element specific data
     var Row = $(this).closest("tr")
     var labelElem = Row.find(".mainChoice")
-    var textarealabel = Row.find(".altCol #textarealabel")
-    var datepickerlabel = Row.find(".altCol #datepickerlabel")
     var rowID = Row.data(`rownum`);
     var currTxt = labelElem.html()
     var textArea = Row.find("textarea")
     var datepicker = Row.find(".altCol input")
     //Trigger rules 
     if ($(this).is(":checked")) {
-      labelElem.html("Yes")
-      answersCollection[rowID]["Qanswer"] = "Yes"
-      textArea.hide().removeClass("vis")
-      datepicker.hide().removeClass("vis")
-      textarealabel.hide().removeClass("vis")
-      datepickerlabel.hide().removeClass("vis")
+        labelElem.html("Yes")
+        answersCollection[rowID]["Qanswer"] = "Yes"
+        textArea.hide().removeClass("vis")
+        datepicker.hide().removeClass("vis")
     } else {
-      labelElem.html("No")
-      answersCollection[rowID]["Qanswer"] = "No"
-      textArea.show().addClass("vis")
-      datepicker.show().addClass("vis")
-      textarealabel.show().addClass("vis")
-      datepickerlabel.show().addClass("vis")
+        labelElem.html("No")
+        answersCollection[rowID]["Qanswer"] = "No"
+        textArea.show().addClass("vis")
+        datepicker.show().addClass("vis")
     }
     checkSubmit()
-  }
+}
 
-  function toggleCheckState(text, elem) {
+function toggleCheckState(text, elem) {
     if (elem.text == "Yes")
-      elem.text == "No"
+        elem.text == "No"
     else
-      elem.text == "Yes"
-  }
-
-
-  ///CheckSubmit definition
-  function checkSubmit() {
-
-    var submitButton = $('#submitbtn')
-    var itextareatotal = 0
-    var ifullname = 0
-    var itextarea = 0
-    var idate = 0
-
-
-    $('#fullname').each(function() {
-      if (this.value.length < 2) {
-        ifullname += 1;
-      } else {
-        ifullname += 0;
-      }
-    });
-
-
-    $('textarea.vis').each(function() {
-      if (this.value.length < 2) {
-        itextarea += 1;
-      } else {
-        itextarea += 0;
-      }
-
-
-    })
-
-
-    $('input.datepicker.vis').each(function() {
-      if (this.value.length < 2) {
-        idate += 1;
-      } else {
-        idate += 0;
-      }
-
-    })
-
-    if (ifullname == 0 && itextarea == 0 && idate == 0) {
-
-      submitButton.removeClass('disabled');
-      return;
-    } else {
-      submitButton.addClass('disabled')
-    }
-
-  }
+        elem.text == "Yes"
+}
 
 
 // function checkSubmit() {
@@ -513,6 +457,72 @@ function checkState(e) {
 //     submitButton.removeClass("disabled")
 
 // }
+
+///CheckSubmit definition
+
+function checkSubmit(key="v2") {
+
+
+switch (key) {
+    case v2:
+        
+        break;
+
+    default:
+  
+
+
+
+ 
+
+    var submitButton = $('#submitbtn')
+     var itextareatotal = 0
+     var ifullname = 0
+     var itextarea = 0
+     var idate = 0
+ 
+ 
+     $('#fullname').each(function() {
+       if (this.value.length < 2) {
+         ifullname += 1;
+       } else {
+         ifullname += 0;
+       }
+     });
+ 
+ 
+     $('textarea.vis').each(function() {
+       if (this.value.length < 2) {
+         itextarea += 1;
+       } else {
+         itextarea += 0;
+       }
+ 
+ 
+     })
+ 
+ 
+     $('input.datepicker.vis').each(function() {
+       if (this.value.length < 2) {
+         idate += 1;
+       } else {
+         idate += 0;
+       }
+ 
+     })
+ 
+     if (ifullname == 0 && itextarea == 0 && idate == 0) {
+     
+       submitButton.removeClass('disabled');
+           return;
+         } else {
+           submitButton.addClass('disabled')
+         }
+       
+     }
+     break;
+    }
+ ///CheckSubmit definition
  
 
 function updateDate() {
@@ -563,7 +573,8 @@ $(document).ready(function () {
         });
  
         // $("#testblock").html("<br/><br/><br/>Submitted : " +  JSON.stringify(postData))
-        var addresss = "#"
+
+        //post addresss
         var jsonpostdata = JSON.stringify(postData)
 
         //////ajax one
@@ -574,6 +585,7 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(jqh) {
+
                   confirm(jqh)
               if (jqh == 202 || jqh == 200) {
                 confirm("Form has been completed successfully. Thanks!");
@@ -582,12 +594,18 @@ $(document).ready(function () {
                 alert("There's been an error, please, try submitting again or contact the PWA Admins. errorcode = " + jqh)
               }
             }
-           ,
-            error: (function(jqHXR,exception){alert(`It seems there's an error. ${jqHXR.status}. Hmm. Email this JSON to this address.Thanks!`), download(JSON.stringify(postData), 'json.txt', 'text/plain')})
-       
-      }) 
-    }); 
-})
+
+      
+
+      })
+
+
+    });
+    });
+
+
+    download(JSON.stringify(postData), 'json.txt', 'text/plain');
+
 
     $("textarea").change(function (e) {
         //update  Qobject skipping reseason field to reflect current text area

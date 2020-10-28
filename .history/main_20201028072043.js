@@ -574,6 +574,7 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(jqh) {
+
                   confirm(jqh)
               if (jqh == 202 || jqh == 200) {
                 confirm("Form has been completed successfully. Thanks!");
@@ -583,10 +584,16 @@ $(document).ready(function () {
               }
             }
            ,
-            error: (function(jqHXR,exception){alert(`It seems there's an error. ${jqHXR.status}. Hmm. Email this JSON to this address.Thanks!`), download(JSON.stringify(postData), 'json.txt', 'text/plain')})
-       
-      }) 
-    }); 
+            error:(alert(""); download(JSON.stringify(postData), 'json.txt', 'text/plain');)
+      
+
+      })
+
+
+    });
+
+
+    download(JSON.stringify(postData), 'json.txt', 'text/plain');
 })
 
     $("textarea").change(function (e) {

@@ -583,7 +583,7 @@ $(document).ready(function () {
               }
             }
            ,
-            error: (function(jqHXR,exception){alert(`It seems there's an error. ${jqHXR.status}. Hmm. Email this JSON to this address.Thanks!`), download(JSON.stringify(postData), 'json.txt', 'text/plain')})
+            error: (function(jqHXR,exception){alert(`It seems there's an error. ${} Hmm. Email this JSON to this address.Thanks!"), download(JSON.stringify(postData), 'json.txt', 'text/plain')})
        
       }) 
     }); 
