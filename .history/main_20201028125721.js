@@ -436,8 +436,9 @@
                   'cache': false,
                   async: false,
                   crossDomain: true,
-                  dataType: 'json',
-                  contentType: "application/json; charset=UTF-8",
+                  "dataType": 'jsonp',
+                  "contentType": "application/json;",
+                  
                   "headers": {
                       "accept": "application/json",
                       "Access-Control-Allow-Origin": "*"

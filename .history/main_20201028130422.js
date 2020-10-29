@@ -434,7 +434,7 @@
                   type: "POST",
                   data: jsonpostdata,
                   'cache': false,
-                  async: false,
+                  async: true,
                   crossDomain: true,
                   dataType: 'json',
                   contentType: "application/json; charset=UTF-8",

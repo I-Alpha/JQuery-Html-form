@@ -437,7 +437,7 @@
                   async: false,
                   crossDomain: true,
                   dataType: 'json',
-                  contentType: "application/json; charset=UTF-8",
+                  contentType: "application/json;charset=UTF-8",
                   "headers": {
                       "accept": "application/json",
                       "Access-Control-Allow-Origin": "*"
